@@ -1,0 +1,375 @@
+<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Facture</title>
+    <style type="text/css"> * {
+        margin: 0;
+        padding: 0;
+        text-indent: 0;
+    }
+
+    .s1 {
+        color: #002433;
+        font-family: "Arial Black", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 9.5pt;
+    }
+
+    .s2 {
+        color: #676767;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 7pt;
+    }
+
+    .s3 {
+        color: #676767;
+        font-family: "Arial Black", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 7pt;
+    }
+
+    a {
+        color: #676767;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 7pt;
+    }
+
+    .s4 {
+        color: #002433;
+        font-family: "Arial Black", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 6pt;
+    }
+
+    .s5 {
+        color: #676767;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 7.5pt;
+    }
+
+    .s6 {
+        color: #676767;
+        font-family: "Arial Black", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 7pt;
+    }
+
+    .s7 {
+        color: #676767;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 7pt;
+    }
+
+    .s8 {
+        color: #002433;
+        font-family: "Arial Black", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 7pt;
+    }
+
+    .s9 {
+        color: #002433;
+        font-family: "Arial Black", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 9.5pt;
+    }
+
+    p {
+        color: #676767;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 6.5pt;
+        margin: 0pt;
+    }
+
+    img {
+        width: 170px;
+        height: 106px;
+
+    }
+
+    table, tbody {
+        vertical-align: top;
+        overflow: visible;
+    }
+    </style>
+</head>
+<body>
+<div>
+    <p style="text-indent: 25pt;text-align: left;">Facture n° {{num_facture}}</p>
+    <img style="padding-top: 5pt;padding-left: 0pt;"
+         src="file:/home/dferbos/PycharmProjects/pythonProject1/logo.jpeg"/>
+    <p style="padding-top: 5pt;text-indent: 80pt;text-align: left;">
+    </p>
+    <p class="s1" style="padding-left: 9pt;text-indent: 4pt;text-align: left;">ODYSSEY MUSHROOMS</p>
+</div>
+<br>
+
+<table style="border-collapse:collapse;margin-left:5pt" cellspacing="0">
+    <tr style="height:28pt">
+        <td style="width:165pt;">
+            <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br/></p>
+            <p class="s1" style="text-indent: 0pt;text-align: left;">Facture n° {{num_facture}}</p>
+        </td>
+        <td style="width:316pt;">
+            <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br/></p>
+            <p class="s1" style="text-indent: 0pt;text-align: left;">DESCRIPTION</p>
+        </td>
+    </tr>
+    <tr style="height:130pt">
+        <td style="width:165pt;">
+            <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br/></p>
+            <p class="s2" style="padding-top: 5pt;text-indent: 0pt;text-align: left;">Date de
+                facturation :
+                {{date_facture}}</p>
+        </td>
+        <td style="width:316pt;">
+            <p style="text-indent: 0pt;text-align: left;"><br/></p>
+
+            <p class="s1" style="padding-top: 4pt;text-indent: 0pt;text-align: left;">{{nom}}</p>
+            <p class="s3" style="padding-top: 4pt;text-indent: 0pt;text-align: left;">{{adresse1}}</p>
+            {% if adresse2 %}
+            <p class="s2" style="padding-top: 5pt;text-indent: 0pt;text-align: left;">{{adresse2}}</p>
+            {% endif %}
+            <p class="s2"
+               style="padding-top: 1pt;text-indent: 0pt;line-height: 119%;text-align: left;">{{code_postal}} {{ville}}</p>
+            <p class="s2"
+               style="padding-top: 1pt;text-indent: 0pt;line-height: 119%;text-align: left;">{{pays}}</p>
+        </td>
+    </tr>
+</table>
+<div id="lignes" style="height: 370pt">
+    <table style="border-collapse:collapse;margin-left:5pt" cellspacing="0">
+        <tr style="height:28pt">
+            <td style="width:165pt;border-top-style:solid;border-top-width:1pt;border-top-color:#CCCCCC;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
+                <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br/></p>
+                <p class="s4" style="text-indent: 0pt;text-align: left;">DESCRIPTION</p></td>
+            <td style="width:109pt;border-top-style:solid;border-top-width:1pt;border-top-color:#CCCCCC;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
+                <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br/></p>
+                <p class="s4" style="padding-right: 16pt;text-indent: 0pt;text-align: right;">QUANTITÉ</p></td>
+            <td style="width:61pt;border-top-style:solid;border-top-width:1pt;border-top-color:#CCCCCC;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
+                <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br/></p>
+                <p class="s4" style="padding-left: 16pt;text-indent: 0pt;text-align: left;">UNITÉ</p></td>
+            <td style="width:91pt;border-top-style:solid;border-top-width:1pt;border-top-color:#CCCCCC;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
+                <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br/></p>
+                <p class="s4" style="padding-right: 21pt;text-indent: 0pt;text-align: right;">PRIX UNITAIRE</p></td>
+            <td style="width:55pt;border-top-style:solid;border-top-width:1pt;border-top-color:#CCCCCC;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
+                <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br/></p>
+                <p class="s4" style="text-indent: 0pt;text-align: right;">TOTAL HT</p></td>
+        </tr>
+        {% for p in produits %}
+        <tr style="height:22pt">
+            <td style="width:165pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
+                <p class="s5" style="padding-top: 6pt;text-indent: 0pt;text-align: left;">{{p.1}}</p></td>
+            <td style="width:109pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
+                <p class="s5" style="padding-top: 6pt;padding-right: 16pt;text-indent: 0pt;text-align: right;">{{p.2}}</p>
+            </td>
+            <td style="width:61pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
+                <p class="s5" style="padding-top: 6pt;padding-left: 16pt;text-indent: 0pt;text-align: left;">unité</p>
+            </td>
+            <td style="width:91pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
+                {% if tva_applicable %}
+                <p class="s5" style="padding-top: 6pt;padding-right: 20pt;text-indent: 0pt;text-align: right;">{{p.3}}€
+                    TTC</p>
+                {% else %}
+                <p class="s5" style="padding-top: 6pt;padding-right: 20pt;text-indent: 0pt;text-align: right;">{{p.3}}€
+                </p>
+                {% endif %}
+            </td>
+            <td style="width:55pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
+                <p class="s5" style="padding-top: 6pt;padding-right: 1pt;text-indent: 0pt;text-align: right;">{{p.5}}
+                    €</p>
+            </td>
+        </tr>
+        {% endfor %}
+        <tr style="height:22pt">
+            <td style="width:165pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
+                <p class="s5" style="padding-top: 6pt;text-indent: 0pt;text-align: left;">Livraison</p></td>
+            <td style="width:109pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
+                <p class="s5" style="padding-top: 6pt;padding-right: 16pt;text-indent: 0pt;text-align: right;">1</p>
+            </td>
+            <td style="width:61pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
+                <p class="s5" style="padding-top: 6pt;padding-left: 16pt;text-indent: 0pt;text-align: left;">unité</p>
+            </td>
+            <td style="width:91pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
+                {% if tva_applicable %}
+                <p class="s5" style="padding-top: 6pt;padding-right: 20pt;text-indent: 0pt;text-align: right;">{{frais_port}}€
+                    TTC</p>
+                {% else %}
+                <p class="s5" style="padding-top: 6pt;padding-right: 20pt;text-indent: 0pt;text-align: right;">{{frais_port}}€
+                </p>
+                {% endif %}
+            </td>
+            <td style="width:55pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
+                <p class="s5" style="padding-top: 6pt;padding-right: 1pt;text-indent: 0pt;text-align: right;">{{frais_port}}
+                    €</p>
+            </td>
+        </tr>
+    </table>
+    <p style="text-indent: 0pt;text-align: left;"><br/></p>
+    <table style="border-collapse:collapse;margin-left:365.713pt" cellspacing="0">
+        {% if tva_applicable %}
+        <tr style="height:13pt">
+            <td style="width:70pt"><p class="s6" style="padding-right: 10pt;text-indent: 0pt;text-align: right;">Total
+                HT</p></td>
+            <td style="width:50pt"><p class="s6" style="padding-right: 1pt;text-indent: 0pt;text-align: right;">
+                {{total_produits_ht}}
+                €</p>
+            </td>
+        </tr>
+        <tr style="height:15pt">
+            <td style="width:70pt"><p class="s7"
+                                      style="padding-top: 4pt;padding-right: 9pt;text-indent: 0pt;text-align: right;">
+                Taux
+                de TVA</p></td>
+            <td style="width:50pt"><p class="s7" style="padding-top: 4pt;text-indent: 0pt;text-align: right;">{{taux}} %</p>
+            </td>
+        </tr>
+        <tr style="height:19pt">
+            <td style="width:70pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2"><p
+                    class="s6" style="padding-top: 1pt;padding-right: 10pt;text-indent: 0pt;text-align: right;">Total
+                TVA</p></td>
+            <td style="width:50pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2"><p
+                    class="s6" style="padding-top: 1pt;padding-right: 1pt;text-indent: 0pt;text-align: right;">{{total_produits_tva}}
+                €</p>
+            </td>
+        </tr>
+        {% if discount %}
+        <tr style="height:19pt">
+            <td style="width:70pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2"><p
+                    class="s6" style="padding-top: 1pt;padding-right: 10pt;text-indent: 0pt;text-align: right;">Discount -{{taux_discount}}%</p></td>
+            <td style="width:50pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2"><p
+                    class="s6" style="padding-top: 1pt;padding-right: 1pt;text-indent: 0pt;text-align: right;">{{total_discount}}
+                €</p>
+            </td>
+        </tr>
+        <tr style="height:21pt">
+            <td style="width:70pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2"><p
+                    style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br/></p>
+                <p class="s8" style="padding-right: 9pt;text-indent: 0pt;line-height: 10pt;text-align: right;">Total TTC
+                    à
+                    régler</p></td>
+            <td style="width:50pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2"><p class="s9"
+                                                                                                           style="padding-top: 7pt;text-indent: 0pt;line-height: 12pt;text-align: right;">
+                {{prix_final}}€</p></td>
+        </tr>
+        {% else %}
+        <tr style="height:21pt">
+            <td style="width:70pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2"><p
+                    style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br/></p>
+                <p class="s8" style="padding-right: 9pt;text-indent: 0pt;line-height: 10pt;text-align: right;">Total TTC
+                    à
+                    régler</p></td>
+            <td style="width:50pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2"><p class="s9"
+                                                                                                           style="padding-top: 7pt;text-indent: 0pt;line-height: 12pt;text-align: right;">
+                {{prix_final}}€</p></td>
+        </tr>
+        {% endif %}
+        {% else %}
+        {% if discount %}
+        <tr style="height:19pt">
+            <td style="width:70pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2"><p
+                    class="s6" style="padding-top: 1pt;padding-right: 10pt;text-indent: 0pt;text-align: right;">Discount -{{taux_discount}}%</p></td>
+            <td style="width:50pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2"><p
+                    class="s6" style="padding-top: 1pt;padding-right: 1pt;text-indent: 0pt;text-align: right;">{{total_discount}}
+                €</p>
+            </td>
+        </tr>
+        <tr style="height:21pt">
+            <td style="width:70pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2"><p
+                    style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br/></p>
+                <p class="s8" style="padding-right: 9pt;text-indent: 0pt;line-height: 10pt;text-align: right;">Total à
+                    régler</p></td>
+            <td style="width:50pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2"><p class="s9"
+                                                                                                           style="padding-top: 7pt;text-indent: 0pt;line-height: 12pt;text-align: right;">
+                {{prix_final}}€</p></td>
+        </tr>
+        {% else %}
+        <tr style="height:21pt">
+            <td style="width:70pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2"><p
+                    style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br/></p>
+                <p class="s8" style="padding-right: 9pt;text-indent: 0pt;line-height: 10pt;text-align: right;">Total à
+                    régler</p></td>
+            <td style="width:50pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2"><p class="s9"
+                                                                                                           style="padding-top: 7pt;text-indent: 0pt;line-height: 12pt;text-align: right;">
+                {{prix_final}}€</p></td>
+        </tr>
+        {% endif %}
+        {% endif  %}
+    </table>
+    <p style="text-indent: 0pt;text-align: left;"><br/></p>
+    <p class="s1" style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Merci pour votre confiance !</p>
+    <p style="padding-top: 6pt;text-indent: 0pt;text-align: left;"><br/></p>
+    <p style="padding-left: 5pt;text-indent: 0pt;text-align: left;">La facture est payable à réception</p>
+    <p style="padding-top: 3pt;padding-left: 5pt;text-indent: 0pt;line-height: 120%;text-align: left;">Des pénalités
+        correspondant au taux directeur de la BCE (la Banque Centrale Européenne), majoré de 10 points seront
+        applicables en
+        l&#39;absence ou en cas de retard de paiement.</p>
+    <p style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Les pénalités de retard sont exigibles sans qu&#39;un
+        rappel soit nécessaire.</p>
+    <p style="padding-top: 1pt;padding-left: 5pt;text-indent: 0pt;line-height: 120%;text-align: left;">Une indemnité
+        forfaitaire de 40 € pour frais de recouvrement sera appliquée en cas de retard de paiement conformément aux
+        articles
+        L 441-3 et L 441-6 du code de commerce.</p>
+    {% if tva_applicable %}
+        {% if pays == 'France' %}
+            <p style="padding-left: 5pt;text-indent: 0pt;line-height: 153%;text-align: left;">Pas d&#39;escompte en cas de
+                paiement
+                anticipé. TVA appliquée : {{pays}}</p>
+        {% else %}
+            <p style="padding-left: 5pt;text-indent: 0pt;line-height: 153%;text-align: left;">Pas d&#39;escompte en cas de
+                paiement
+                anticipé. TVA étrangère appliquée : {{pays_label}}</p>
+        {% endif %}
+    {% else %}
+    <p style="padding-left: 5pt;text-indent: 0pt;line-height: 153%;text-align: left;">Pas d&#39;escompte en cas de
+        paiement
+        anticipé. TVA non applicable</p>
+    {% endif %}
+    <p style="padding-left: 5pt;text-indent: 0pt;line-height: 7pt;text-align: left;">FR76 1690 6000 2887 0517 9506
+        526</p>
+</div>
+<p style="text-indent: 0pt;text-align: left;"><br/></p>
+<p style="text-indent: 0pt;text-align: left;">
+<hr/>
+</p>
+<p style="padding-left: 5pt;text-indent: 0pt;line-height: 153%;text-align: left;">ODYSSEY MUSHROOMS</p>
+<p style="padding-left: 5pt;text-indent: 0pt;line-height: 153%;text-align: left;">Siège social : ZONE INDUSTRIEL LARRE
+    LORE , 64310 ASCAIN</p>
+<p style="padding-left: 5pt;text-indent: 0pt;line-height: 153%;text-align: left;">SAS au capital de 2000€</p>
+<p style="padding-left: 5pt;text-indent: 0pt;line-height: 153%;text-align: left;">N° SIRET : 92217345500010/ RCS BAYONNE
+    922173455 / APE : 0113Z</p>
+<p style="padding-left: 5pt;text-indent: 0pt;line-height: 153%;text-align: left;">N° TVA intracommunautaire : FR61
+    922173455</p>
+<p style="padding-left: 5pt;text-indent: 0pt;line-height: 153%;text-align: left;">Tél : 0782383759 / Email :
+    maxcarlier59000@gmail.com</p>
+</body>
+</html>
