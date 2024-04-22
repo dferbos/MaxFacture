@@ -188,24 +188,24 @@
         {% for p in produits %}
         <tr style="height:22pt">
             <td style="width:165pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
-                <p class="s5" style="padding-top: 6pt;text-indent: 0pt;text-align: left;">{{p.1}}</p></td>
+                <p class="s5" style="padding-top: 6pt;text-indent: 0pt;text-align: left;">{{p.nom_produit}}</p></td>
             <td style="width:109pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
-                <p class="s5" style="padding-top: 6pt;padding-right: 16pt;text-indent: 0pt;text-align: right;">{{p.2}}</p>
+                <p class="s5" style="padding-top: 6pt;padding-right: 16pt;text-indent: 0pt;text-align: right;">{{p.quantite}}</p>
             </td>
             <td style="width:61pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
                 <p class="s5" style="padding-top: 6pt;padding-left: 16pt;text-indent: 0pt;text-align: left;">unité</p>
             </td>
             <td style="width:91pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
                 {% if tva_applicable %}
-                <p class="s5" style="padding-top: 6pt;padding-right: 20pt;text-indent: 0pt;text-align: right;">{{p.3}}€
+                <p class="s5" style="padding-top: 6pt;padding-right: 20pt;text-indent: 0pt;text-align: right;">{{p.prix_unitaire}}€
                     TTC</p>
                 {% else %}
-                <p class="s5" style="padding-top: 6pt;padding-right: 20pt;text-indent: 0pt;text-align: right;">{{p.3}}€
+                <p class="s5" style="padding-top: 6pt;padding-right: 20pt;text-indent: 0pt;text-align: right;">{{p.prix_unitaire}}€
                 </p>
                 {% endif %}
             </td>
             <td style="width:55pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
-                <p class="s5" style="padding-top: 6pt;padding-right: 1pt;text-indent: 0pt;text-align: right;">{{p.5}}
+                <p class="s5" style="padding-top: 6pt;padding-right: 1pt;text-indent: 0pt;text-align: right;">{{p.prix_total_ht}}
                     €</p>
             </td>
         </tr>
@@ -229,7 +229,7 @@
                 {% endif %}
             </td>
             <td style="width:55pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2">
-                <p class="s5" style="padding-top: 6pt;padding-right: 1pt;text-indent: 0pt;text-align: right;">{{frais_port}}
+                <p class="s5" style="padding-top: 6pt;padding-right: 1pt;text-indent: 0pt;text-align: right;">{{frais_port_final}}
                     €</p>
             </td>
         </tr>
@@ -238,30 +238,43 @@
     <table style="border-collapse:collapse;margin-left:365.713pt" cellspacing="0">
         {% if tva_applicable %}
         <tr style="height:13pt">
-            <td style="width:70pt"><p class="s6" style="padding-right: 10pt;text-indent: 0pt;text-align: right;">Total
+            <td style="text-align: right;width:70pt"><p class="s6" style="padding-right: 10pt;text-indent: 0pt;text-align: right;">Total
                 HT</p></td>
             <td style="width:50pt"><p class="s6" style="padding-right: 1pt;text-indent: 0pt;text-align: right;">
                 {{total_produits_ht}}
                 €</p>
             </td>
         </tr>
-        <tr style="height:15pt">
-            <td style="width:70pt"><p class="s7"
-                                      style="padding-top: 4pt;padding-right: 9pt;text-indent: 0pt;text-align: right;">
-                Taux
-                de TVA</p></td>
-            <td style="width:50pt"><p class="s7" style="padding-top: 4pt;text-indent: 0pt;text-align: right;">{{taux}} %</p>
+        {% if taux2 %}
+        <tr style="height:19pt">
+            <td style="width:70pt;"><p
+                    class="s6" style="padding-top: 1pt;padding-right: 10pt;text-indent: 0pt;text-align: right;">Total
+                TVA ({{taux1}}%)</p></td>
+            <td style="width:50pt;"><p
+                    class="s6" style="padding-top: 1pt;padding-right: 1pt;text-indent: 0pt;text-align: right;">{{total_produits_tva1}}
+                €</p>
             </td>
         </tr>
         <tr style="height:19pt">
             <td style="width:70pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2"><p
-                    class="s6" style="padding-top: 1pt;padding-right: 10pt;text-indent: 0pt;text-align: right;">Total
-                TVA</p></td>
+                    class="s6" style="padding-right: 10pt;text-indent: 0pt;text-align: right;">Total
+                TVA ({{taux2}}%)</p></td>
             <td style="width:50pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2"><p
-                    class="s6" style="padding-top: 1pt;padding-right: 1pt;text-indent: 0pt;text-align: right;">{{total_produits_tva}}
+                    class="s6" style="padding-right: 1pt;text-indent: 0pt;text-align: right;">{{total_produits_tva2}}
                 €</p>
             </td>
         </tr>
+        {% else %}
+        <tr style="height:19pt">
+            <td style="width:70pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2"><p
+                    class="s6" style="padding-top: 1pt;padding-right: 10pt;text-indent: 0pt;text-align: right;">Total
+                TVA ( {{taux1}}% )</p></td>
+            <td style="width:50pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2"><p
+                    class="s6" style="padding-top: 1pt;padding-right: 1pt;text-indent: 0pt;text-align: right;">{{total_produits_tva1}}
+                €</p>
+            </td>
+        </tr>
+        {% endif %}
         {% if discount %}
         <tr style="height:19pt">
             <td style="width:70pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2"><p
